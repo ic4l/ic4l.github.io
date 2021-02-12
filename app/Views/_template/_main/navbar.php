@@ -5,7 +5,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light navbar-reset">
                 <a class="logo" href="<?= base_url(''); ?>">
-                    <img class="logo-default" src="<?= base_url('_assets/_images/_logo'); ?>/micasa-logo.png" alt="Arafa">
+                    <img class="logo-default" src="<?= base_url('_assets/_images/_logo'); ?>/micasa-logo2.png" alt="Arafa">
                 </a>
                 <button class="navbar-toggler border-0 p-0" type="button" data-toggle="collapse"
                         data-target="#theme-navbar" aria-controls="theme-navbar" aria-expanded="false"
