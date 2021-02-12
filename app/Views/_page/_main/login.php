@@ -51,11 +51,12 @@
                                           <div class="col-12 text-lg-left">
                                             <?php if ($config->allowRemembering): ?>
                                               <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember" <?php if(old('remember')) : ?> checked <?php endif ?> >
+                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" <?php if(old('remember')) : ?> checked <?php endif ?>>
                                                 <label class="form-check-label" for="defaultCheck1">
                                                   <?=lang('Auth.rememberMe')?>
                                                 </label>
                                               </div>
+                                              </label>
                                             </div>
                                             <?php endif; ?>
                                           </div>
@@ -79,6 +80,9 @@
                                     <?php if ($config->allowRegistration) : ?>
                                       <h3 class="c-black">First time here?</h3>
                                       <a href="<?= route_to('register') ?>" class="btn btn-custom"><?=lang('Auth.needAnAccount')?></a>
+                                    <?php else: ?>
+                                      <h3 class="c-black">Registration is close!</h3>
+                                      <i class="fas fa-exclamation-triangle fa-10x"></i>
                                     <?php endif; ?>
                                   </div>
                               </div>

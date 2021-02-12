@@ -1,6 +1,11 @@
 <!-- Bootstrap CSS -->
 <link type="text/css" rel="stylesheet" media="all" href="<?= base_url('_assets/_main'); ?>/vendor/bootstrap/css/bootstrap.min.css">
 
+<!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->
+  <link href="<?= base_url('_assets/fontawesome'); ?>/css/fontawesome.css" rel="stylesheet">
+  <link href="<?= base_url('_assets/fontawesome'); ?>/css/brands.css" rel="stylesheet">
+  <link href="<?= base_url('_assets/fontawesome'); ?>/css/solid.css" rel="stylesheet">
+
 <!-- Vendor/Plugins CSS -->
 <link type="text/css" rel="stylesheet" media="all" href="<?= base_url('_assets/_main'); ?>/vendor/animate-css/animate.min.css">
 <link type="text/css" rel="stylesheet" media="all" href="<?= base_url('_assets/_main'); ?>/vendor/slick/slick.css">
