@@ -1,0 +1,206 @@
+[
+    'ISBN'    => 'xxxxxx',
+    'title'    => 'xxxxxx',
+    'author'    => 'xxxxxx',
+    'publisher'    => 'xxxxxx',
+    'cover'    => 'xxxxxx',
+    'publish_date'    => 'xxxxxx',
+    'created_at'    => 'xxxxxx',
+    'updated_at'    => 'xxxxxx',
+],
+
+
+
+
+select sum(`segoDB`.`finance_tbl`.`credit`) AS `total_credit`,sum(`segoDB`.`finance_tbl`.`debit`) AS `total_debit` from `segoDB`.`finance_tbl`
+
+
+
+SELECT bank_name, sum(sent_IDR) from transaction_list WHERE credit_debit='credit' GROUP BY bank_name;
+
+
+SELECT BID, COUNT(*) as total from book_details GROUP BY BID;
+
+SELECT BID, COUNT(IF(status = 'Available', 1, NULL)) AS 'IN', COUNT(IF(status = 'Not Available', 1, NULL)) AS 'OUT' from book_details GROUP BY BID;
+
+
+CREATE OR REPLACE VIEW view_total AS SELECT BID, isbn as ISBN, title, author, publisher, COUNT(*) as quantity from book_view GROUP BY BID;
+
+CREATE OR REPLACE VIEW book_total AS SELECT BID, isbn as ISBN, title, author, publisher, COUNT(IF(status = 'Available', 1, NULL)) AS 'IN', COUNT(IF(status = 'Not Available', 1, NULL)) AS 'OUT', COUNT(*) as quantity from book_view GROUP BY BID;
+
+SELECT
+    `m1`.`BID` AS `BID`,
+    `m2`.`iCode` AS `iCode`,
+    `m1`.`isbn` AS `ISBN`,
+    `m1`.`title` AS `title`,
+    `m1`.`author` AS `author`,
+    `m1`.`publisher` AS `publisher`,
+    `m2`.`status` AS `status`,
+    `m2`.`condition` AS `condition`,
+    `m2`.`cover` AS `cover`
+FROM
+    (
+        `schoolDB`.`book_tbl` `m1`
+    JOIN `schoolDB`.`book_details` `m2`
+    ON
+        (`m1`.`BID` = `m2`.`BID`)
+    )
+
+SELECT
+    `book_view`.`BID` AS `BID`,
+    `book_view`.`ISBN` AS `ISBN`,
+    `book_view`.`title` AS `title`,
+    `book_view`.`author` AS `author`,
+    `book_view`.`publisher` AS `publisher`,
+    COUNT(
+        IF(
+            `book_view`.`status` = 'Available',
+            1,
+            NULL
+        )
+    ) AS `IN`,
+    COUNT(
+        IF(
+            `book_view`.`status` = 'Not Available',
+            1,
+            NULL
+        )
+    ) AS `OUT`,
+    COUNT(0) AS `quantity`
+FROM
+    `schoolDB`.`book_view`
+GROUP BY
+    `book_view`.`BID`
+
+
+
+
+
+
+    CREATE OR REPLACE VIEW event_view AS
+    SELECT m1.EID, m1.category, m1.tema, m1.judul, m1.kata, m1.wag, m1.UID, m2.fullName, m2.image, m2.email, m2.mobile, m1.progress,
+    m1.start_date, m1.end_date, m1.brochure, m1.approve, m1.created_at, m1.updated_at
+    FROM event_tbl m1 JOIN users m2 ON m1.UID = m2.id;
+
+
+CREATE OR REPLACE VIEW event_member AS
+SELECT m1.XID, m2.EID, m1.peserta, m3.fullName AS nama_peserta, m2.category, m2.theme, m2.judul, m2.kata, m2.progress, m2.wag, m2.start_date, m2.end_date, m2.brochure, m2.approve,
+m1.PJE, m4.fullName, m4.email, m4.mobile,
+m1.naskah, m1.setor, m1.pembayaran, m1.ongkir, m1.kirim, m1.created_at, m1.updated_at, m1.delete
+FROM event_details m1
+JOIN event_tbl m2
+JOIN user_tbl m3
+JOIN event_view m4
+ON m2.EID = m1.EID AND m1.peserta = m3.UID AND m1.PJE = m4.UID;
+
+
+
+
+
+CREATE OR REPLACE VIEW event_total as SELECT
+COUNT(*) as total,
+COUNT(IF(progress = 'Waiting Approval', 1, NULL)) AS 'waiting',
+COUNT(IF(progress = 'Collecting', 1, NULL)) AS 'collecting',
+COUNT(IF(progress = 'Editing', 1, NULL)) AS 'editing',
+COUNT(IF(progress = 'Layouting', 1, NULL)) AS 'layouting',
+COUNT(IF(progress = 'Design Cover', 1, NULL)) AS 'designing',
+COUNT(IF(progress = 'Pre-order', 1, NULL)) AS 'preorder',
+COUNT(IF(progress = 'Publishing', 1, NULL)) AS 'publishing',
+COUNT(IF(progress = 'Finish', 1, NULL)) AS 'finish',
+COUNT(IF(progress = 'Cancelled', 1, NULL)) AS 'cancelled'
+from event_tbl;
+
+CREATE OR REPLACE VIEW user_total as SELECT
+COUNT(*) as total,
+COUNT(IF(role = 'Founder', 1, NULL)) AS 'founder',
+COUNT(IF(role = 'Member', 1, NULL)) AS 'member',
+COUNT(IF(role = 'PJ Event', 1, NULL)) AS 'pje',
+COUNT(IF(role = 'Admin', 1, NULL)) AS 'admin',
+COUNT(IF(role = 'IT Manager', 1, NULL)) AS 'it',
+COUNT(IF(role = 'Operational Manager', 1, NULL)) AS 'operational',
+COUNT(IF(role = 'Marketing Manager', 1, NULL)) AS 'marketing',
+COUNT(IF(role = 'Editor', 1, NULL)) AS 'editor',
+COUNT(IF(role = 'Layouter', 1, NULL)) AS 'layouter',
+COUNT(IF(role = 'Cover Designer', 1, NULL)) AS 'designer'
+from user_tbl;
+
+
+// ==================================== total event per PJ ==============================================================
+CREATE OR REPLACE VIEW event_pje as SELECT
+UID,
+COUNT(*) as total,
+COUNT(IF(progress = 'Waiting Approval', 1, NULL)) AS 'waiting',
+COUNT(IF(progress = 'Collecting', 1, NULL)) AS 'collecting',
+COUNT(IF(progress = 'Editing', 1, NULL)) AS 'editing',
+COUNT(IF(progress = 'Layouting', 1, NULL)) AS 'layouting',
+COUNT(IF(progress = 'Design Cover', 1, NULL)) AS 'designing',
+COUNT(IF(progress = 'Pre-order', 1, NULL)) AS 'preorder',
+COUNT(IF(progress = 'Publishing', 1, NULL)) AS 'publishing',
+COUNT(IF(progress = 'Finish', 1, NULL)) AS 'finish',
+COUNT(IF(progress = 'Cancelled', 1, NULL)) AS 'cancelled'
+from event_tbl GROUP BY UID;
+// ==================================================================================================
+
+// ---------------- view USERS
+CREATE OR REPLACE VIEW users_view AS SELECT m3.id as userid, m3.email, m3.username,
+m3.fullname, m3.nickname, m3.dob, m3.pob, m3.gender,
+m3.mobile, m3.image, m3.twitter, m3.instagram, m3.facebook, m2.group_id as gid, m1.name as role,
+m3.address, m3.active, m3.created_at, m3.updated_at, m3.deleted_at
+FROM auth_groups m1
+JOIN auth_groups_users m2
+JOIN users m3
+on m1.id = m2.group_id
+AND m3.id = m2.user_id;
+
+// ---------------- view DESIGNER JOB
+CREATE OR REPLACE VIEW designer_view AS SELECT
+m1.DID, m1.UID, m3.fullname as designer, m1.EID, m2.UID as EUID, m4.fullName AS PJName, m4.mobile, m2.category, m2.tema, m2.judul, m2.kata, m2.approve, m2.progress,
+m2.start_date, m2.end_date, m1.pesan, m1.job, m1.status, m1.fee
+FROM designer_job m1
+JOIN event_tbl m2
+JOIN users m3
+JOIN event_view m4
+ON m1.EID = m2.EID
+AND
+m1.UID = m3.id
+AND
+m2.UID = m4.UID ;
+
+
+<?php if($xEvent['progress'] == 'Collecting'){ ?>
+<?php if($vUser['role'] == 'Member'){ ?>
+  <?php if(!$xJoin){ ?>
+  <?= form_open(base_url('event/event_join')) ?>
+    <input hidden type="text" name="xEID" value="<?= $xEvent['EID']; ?>">
+    <input hidden type="text" name="xPeserta" value="<?= $vUser['UID']; ?>">
+    <input hidden type="text" name="xPJE" value="<?= $xEvent['UID']; ?>">
+    <div class="container mt-3 text-center">
+      <button type="submit" class="btn btn-success">Join Event</button>
+    </div>
+  <?= form_close(); ?>
+<?php } else { ?>
+  <div class="col-12">
+    <div class="alert alert-warning" role="alert">
+      <strong>Anda telah mengikuti event ini.</strong>
+    </div>
+  </div>
+  <?php ;} } else {
+    if($xEvent['UID'] == $vUser['UID']){ ?>
+<div class="container mt-3 text-center">
+  <a href="<?= base_url('event/event_update/'.$xEvent['EID']); ?>" class="btn btn-secondary">Edit</a>
+</div>
+<?php } }
+  }?>
+
+
+
+
+
+// -------------------- query builder
+  $this->builder->select('users.id as userid, username, fullname, email, image, DOB, POB, gender, mobile, nickname, facebook, twitter, instagram, name');
+  $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+  $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+  $this->builder->where('users.id', $id);
+  $query = $this->builder->get();
+
+  $data['user'] = $query->getRow();
