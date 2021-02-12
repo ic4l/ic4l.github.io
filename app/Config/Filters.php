@@ -6,6 +6,11 @@ use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
+use Myth\Auth\Filters\LoginFilter;
+use Myth\Auth\Filters\RoleFilter;
+use Myth\Auth\Filters\PermissionFilter;
+use App\Filters\NoAuth;
+use App\Filters\Auth;
 
 class Filters extends BaseConfig
 {
@@ -16,9 +21,14 @@ class Filters extends BaseConfig
 	 * @var array
 	 */
 	public $aliases = [
-		'csrf'     => CSRF::class,
-		'toolbar'  => DebugToolbar::class,
-		'honeypot' => Honeypot::class,
+		'csrf'    	 => CSRF::class,
+		'toolbar'  	 => DebugToolbar::class,
+		'honeypot' 	 => Honeypot::class,
+		'login'      => LoginFilter::class,
+    'role'       => RoleFilter::class,
+    'permission' => PermissionFilter::class,
+		'auth' 			 => Auth::class,
+		'noauth' 		 => NoAuth::class,
 	];
 
 	/**
@@ -29,7 +39,8 @@ class Filters extends BaseConfig
 	 */
 	public $globals = [
 		'before' => [
-			// 'honeypot',
+			'honeypot',
+			// 'login',
 			// 'csrf',
 		],
 		'after'  => [
