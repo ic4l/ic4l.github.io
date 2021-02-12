@@ -11,13 +11,15 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
     <head>
         <meta charset="utf-8">
         <title>
-            Marketing Dashboard - Application Intel - SmartAdmin v4.5.1
+            Mi Casa - Dashboard
         </title>
         <meta name="description" content="Marketing Dashboard">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+
         <!-- Call App Mode on ios devices -->
         <meta name="apple-mobile-web-app-capable" content="yes" />
+
         <!-- Remove Tap Highlight on Windows Phone IE -->
         <meta name="msapplication-tap-highlight" content="no">
         <!-- base css -->
@@ -25,6 +27,12 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
         <link id="appbundle" rel="stylesheet" media="screen, print" href="<?= base_url('_assets/_admin'); ?>/css/app.bundle.css">
         <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
         <link id="myskin" rel="stylesheet" media="screen, print" href="<?= base_url('_assets/_admin'); ?>/css/skins/skin-master.css">
+
+        <!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->
+        <link href="<?= base_url('_assets/fontawesome'); ?>/css/fontawesome.css" rel="stylesheet">
+        <link href="<?= base_url('_assets/fontawesome'); ?>/css/brands.css" rel="stylesheet">
+        <link href="<?= base_url('_assets/fontawesome'); ?>/css/solid.css" rel="stylesheet">
+
         <!-- Place favicon.ico in the root directory -->
         <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('_assets/_admin'); ?>/img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('_assets/_admin'); ?>/img/favicon/favicon-32x32.png">
