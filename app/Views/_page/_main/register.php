@@ -10,23 +10,23 @@
                       <div class="row no-gutters align-items-center">
                           <div class="col-md-6 order-md-last">
                               <div class="form-wrap bg-white">
-                                  <h4 class="btm-sep pb-3 mb-5"><?=lang('Auth.register')?></h4>
+                                  <h4 class="btm-sep pb-3 mb-3"><?=lang('Auth.register')?></h4>
                                   <?= view('Myth\Auth\Views\_message_block') ?>
                                   <form action="<?= route_to('register') ?>" method="post">
                                       <?= csrf_field() ?>
                                       <div class="row">
                                           <div class="col-12">
                                             <small id="emailHelp" class="form-text text-muted"><?=lang('Auth.weNeverShare')?></small>
-                                              <div class="form-group position-relative">
-                                                  <span class="zmdi zmdi-account"></span>
-                                                  <input type="email" class="form-control <?php if(session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" aria-describedby="emailHelp" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>">
-                                              </div>
+                                            <div class="form-group position-relative">
+                                                <span class="zmdi zmdi-email"></span>
+                                                <input type="email" class="form-control <?php if(session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>" autocomplete="off">
+                                            </div>
                                           </div>
                                           <div class="col-12">
-                                              <div class="form-group position-relative">
-                                                  <span class="zmdi zmdi-email"></span>
-                                                  <input type="text" class="form-control <?php if(session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>" autocomplete="off">
-                                              </div>
+                                            <div class="form-group position-relative">
+                                                <span class="zmdi zmdi-account"></span>
+                                                <input type="text" class="form-control <?php if(session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" aria-describedby="emailHelp" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>">
+                                            </div>
                                           </div>
                                           <div class="col-12">
                                               <div class="form-group position-relative">

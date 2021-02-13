@@ -30,7 +30,7 @@
                                           <div class="col-12">
                                               <div class="form-group position-relative">
                                                   <span class="zmdi zmdi-account"></span>
-                                                  <input type="email" id="email" class="form-control <?php if(session('errors.login')) : ?>is-invalid<?php endif ?>"
+                                                  <input type="text" id="email" class="form-control <?php if(session('errors.login')) : ?>is-invalid<?php endif ?>"
                                                       name="login" placeholder="<?=lang('Auth.emailOrUsername')?>">
                                                       <div class="invalid-feedback">
                                         								<?= session('errors.login') ?>
