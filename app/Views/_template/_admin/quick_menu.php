@@ -8,7 +8,7 @@
     <a href="#" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Scroll Top">
         <i class="fal fa-arrow-up"></i>
     </a>
-    <a href="page_login.html" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
+    <a href="<?= base_url('logout'); ?>" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
         <i class="fal fa-sign-out"></i>
     </a>
     <a href="#" class="menu-item btn" data-action="app-fullscreen" data-toggle="tooltip" data-placement="left" title="Full Screen">
@@ -16,9 +16,6 @@
     </a>
     <a href="#" class="menu-item btn" data-action="app-print" data-toggle="tooltip" data-placement="left" title="Print page">
         <i class="fal fa-print"></i>
-    </a>
-    <a href="#" class="menu-item btn" data-action="app-voice" data-toggle="tooltip" data-placement="left" title="Voice command">
-        <i class="fal fa-microphone"></i>
     </a>
 </nav>
 <!-- END Quick Menu -->

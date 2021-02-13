@@ -38,6 +38,13 @@ $routes->get('/', 'Main::index', ['filter' => 'noauth']);
 $routes->get('dashboard', 'Admin::index', ['filter' => 'login']);
 // --------------------------------------------------------------------
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+$routes->get('user/user_list', 'User::user_list', ['filter' => 'role:Admin']);
+$routes->get('user/(:num)', 'User::user_details/$1', ['filter' => 'role:Admin']);
+$routes->get('user/details/(:num)', 'User::user_details/$1', ['filter' => 'role:Admin']);
+$routes->get('user/profile', 'User::profile', ['filter' => 'login']);
+$routes->get('user/search', 'User::search', ['filter' => 'role:Admin']);
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 /*
  * --------------------------------------------------------------------

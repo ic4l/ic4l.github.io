@@ -1,3 +1,4 @@
+<?php $uri = service('uri'); ?>
 <!-- BEGIN Left Aside -->
 <aside class="page-sidebar">
     <div class="page-logo">
@@ -36,27 +37,22 @@
 
         <!-- BEGIN NAVBAR -->
         <ul id="js-nav-menu" class="nav-menu">
-          <li class="active">
+          <li class="<?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null)  ?>">
               <a href="<?= base_url('dashboard'); ?>" title="Blank Project" data-filter-tags="blank page">
                   <i class="fas fa-tachometer-alt"></i>
                   <span class="nav-link-text" data-i18n="nav.blankpage">Dashboard</span>
               </a>
           </li>
-          <li>
+          <li class="<?= ($uri->getSegment(1) == 'user' ? 'active open' : null)  ?>">
               <a href="#" title="Theme Settings" data-filter-tags="theme settings">
                   <i class="fas fa-user-cog"></i>
                   <span class="nav-link-text" data-i18n="nav.theme_settings">User</span>
               </a>
               <ul>
-                  <li>
-                    <a href="settings_how_it_works.html" title="User List" data-filter-tags="user">
+                  <li class="<?= ($uri->getSegment(2) == 'user_list' ? 'active' : null)  ?>">
+                    <a href="<?= base_url('user/user_list'); ?>" title="User List" data-filter-tags="user">
                       <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">User List</span>
                     </a>
-                  </li>
-                  <li>
-                      <a href="settings_layout_options.html" title="Layout Options" data-filter-tags="theme settings layout options">
-                          <span class="nav-link-text" data-i18n="nav.theme_settings_layout_options">Setting</span>
-                      </a>
                   </li>
               </ul>
           </li>
@@ -66,29 +62,5 @@
         <div class="filter-message js-filter-message bg-success-600"></div>
     </nav>
     <!-- END PRIMARY NAVIGATION -->
-    <!-- NAV FOOTER -->
-    <div class="nav-footer shadow-top">
-        <a href="#" onclick="return false;" data-action="toggle" data-class="nav-function-minify" class="hidden-md-down">
-            <i class="ni ni-chevron-right"></i>
-            <i class="ni ni-chevron-right"></i>
-        </a>
-        <ul class="list-table m-auto nav-footer-buttons">
-            <li>
-                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Chat logs">
-                    <i class="fal fa-comments"></i>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Support Chat">
-                    <i class="fal fa-life-ring"></i>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Make a call">
-                    <i class="fal fa-phone"></i>
-                </a>
-            </li>
-        </ul>
-    </div> <!-- END NAV FOOTER -->
 </aside>
 <!-- END Left Aside -->
