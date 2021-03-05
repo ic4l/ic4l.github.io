@@ -179,6 +179,29 @@ class CreateAuthTables extends Migration
 			$this->forge->addForeignKey('user_id', 'users', 'id', false, 'CASCADE');
 			$this->forge->addForeignKey('permission_id', 'auth_permissions', 'id', false, 'CASCADE');
 			$this->forge->createTable('auth_users_permissions');
+
+			/*
+			 * Web Configuration
+			 */
+			$fields = [
+					'id'           	=> ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
+					'name'        	=> ['type' => 'varchar', 'constraint' => 255],
+					'description' 	=> ['type' => 'varchar', 'constraint' => 255],
+					'visi'        	=> ['type' => 'varchar', 'constraint' => 255],
+					'misi' 					=> ['type' => 'varchar', 'constraint' => 255],
+					'instagram'     => ['type' => 'varchar', 'constraint' => 255],
+					'facebook' 			=> ['type' => 'varchar', 'constraint' => 255],
+					'twitter'       => ['type' => 'varchar', 'constraint' => 255],
+					'whatsapp' 			=> ['type' => 'varchar', 'constraint' => 255],
+					'email'       	=> ['type' => 'varchar', 'constraint' => 255],
+					'address' 			=> ['type' => 'varchar', 'constraint' => 255],
+					'logo'       	 	=> ['type' => 'varchar', 'constraint' => 255],
+					'icon' 					=> ['type' => 'varchar', 'constraint' => 255],
+			];
+
+			$this->forge->addKey('id', true);
+			$this->forge->addField($fields);
+			$this->forge->createTable('web_config');
 	}
 
 	//--------------------------------------------------------------------
@@ -207,6 +230,7 @@ class CreateAuthTables extends Migration
 	$this->forge->dropTable('auth_groups_permissions', true);
 	$this->forge->dropTable('auth_groups_users', true);
 	$this->forge->dropTable('auth_users_permissions', true);
+	$this->forge->dropTable('web_config', true);
 	}
 
 

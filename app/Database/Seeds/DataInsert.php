@@ -60,7 +60,7 @@ class DataInsert extends \CodeIgniter\Database\Seeder
 
 // ----------------------------------- ADMIN -------------------------------------------------------
                   $data = [
-                          'email'         => 'ic4l@sego.tech',
+                          'email'         => 'ic4l@micasa.id',
                           'username'      => 'ic4l',
                           'fullname'      => 'FAISAL M DARMAWI',
                           'nickname'      => 'Pujangga Araban',
@@ -90,17 +90,17 @@ class DataInsert extends \CodeIgniter\Database\Seeder
 
 
                   $data = [
-                            'email'         => 'rosi@sego.tech',
-                            'username'      => 'rosi',
-                            'fullname'      => 'Rosi Oktaviani',
-                            'nickname'      => 'Rosi Oktaviani',
-                            'pob'           => 'Bogor',
-                            'dob'           => '2000-10-18',
+                            'email'         => 'faradisa@micasa.id',
+                            'username'      => 'faradis4',
+                            'fullname'      => 'Faradisa Frada',
+                            'nickname'      => 'Faradisa Frada',
+                            'pob'           => 'Jeddah',
+                            'dob'           => '2013-11-30',
                             'gender'        => 'Female',
-                            'mobile'        => '+6285692612734',
+                            'mobile'        => '+621211219970',
                             'password_hash' => '$2y$10$6AnvAoVKo46945pqgZhrc.Z3z2e/Bpn2mMHurPm3M5iiVzJApp5Qu',
                             'active'        => '1',
-                            'image'         => 'rosi.jpg',
+                            'image'         => 'faradisa.jpg',
                             'created_at'    => date("Y-m-d h:i:sa"),
                       ];
                   $this->db->table('users')->insert($data);
@@ -112,102 +112,49 @@ class DataInsert extends \CodeIgniter\Database\Seeder
                   $this->db->table('auth_groups_users')->insert($data);
 
                   $data = [
-                            'email'         => 'mellaisyah@sego.tech',
-                            'username'      => 'Mellaisyah',
-                            'fullname'      => 'Mella Aisyah Musyafir',
-                            'nickname'      => 'Mellaisyah',
-                            'pob'           => 'Bantul',
-                            'dob'           => '2001-11-12',
-                            'gender'        => 'Female',
-                            'mobile'        => '+6285540616218',
+                            'email'         => 'rafa@micasa.id',
+                            'username'      => 'raf4',
+                            'fullname'      => 'Rafa Frada',
+                            'nickname'      => 'Rafa Frada',
+                            'pob'           => 'Jeddah',
+                            'dob'           => '2018-01-26',
+                            'gender'        => 'Male',
+                            'mobile'        => '+628855885588',
                             'password_hash' => '$2y$10$6AnvAoVKo46945pqgZhrc.Z3z2e/Bpn2mMHurPm3M5iiVzJApp5Qu',
                             'active'        => '1',
-                            'image'         => 'mella.jpg',
+                            'image'         => 'rafa.jpg',
                             'created_at'    => date("Y-m-d h:i:sa"),
                       ];
                   $this->db->table('users')->insert($data);
 
                   $data = [
                           'user_id'      => '3',
-                          'group_id'     => '3',
-                      ];
-                  $this->db->table('auth_groups_users')->insert($data);
-
-
-// ----------------------------------- DESIGNER 6 -------------------------------------------------------
-                  $data = [
-                            'email'         => 'roil@sego.tech',
-                            'username'      => 'Roil',
-                            'fullname'      => 'Roil Kurniaman Hulu',
-                            'nickname'      => 'Bianglala Senja',
-                            'pob'           => 'Awolo',
-                            'dob'           => '2003-7-28',
-                            'gender'        => 'Male',
-                            'mobile'        => '+6282275373648',
-                            'password_hash' => '$2y$10$6AnvAoVKo46945pqgZhrc.Z3z2e/Bpn2mMHurPm3M5iiVzJApp5Qu',
-                            'active'        => '1',
-                            'image'         => 'roil.jpg',
-                            'created_at'    => date("Y-m-d h:i:sa"),
-                      ];
-                  $this->db->table('users')->insert($data);
-
-                  $data = [
-                          'user_id'      => '4',
-                          'group_id'     => '6',
-                      ];
-                  $this->db->table('auth_groups_users')->insert($data);
-// ----------------------------------- DESIGNER 6 -------------------------------------------------------
-
-// --------------------------------------- EDITOR 4 ---------------------------------------------------
-                  $data = [
-                            'email'         => 'ulfa@sego.tech',
-                            'username'      => 'Ulfa',
-                            'fullname'      => 'Ulfa Sari',
-                            'nickname'      => 'Author Gaje',
-                            'pob'           => 'Riau, Kampung Baru',
-                            'dob'           => '2004-12-18',
-                            'gender'        => 'Female',
-                            'mobile'        => '+6282210268348',
-                            'password_hash' => '$2y$10$6AnvAoVKo46945pqgZhrc.Z3z2e/Bpn2mMHurPm3M5iiVzJApp5Qu',
-                            'active'        => '1',
-                            'image'         => 'ulfa.jpg',
-                            'created_at'    => date("Y-m-d h:i:sa"),
-                      ];
-                  $this->db->table('users')->insert($data);
-
-                  $data = [
-                          'user_id'      => '5',
                           'group_id'     => '4',
                       ];
                   $this->db->table('auth_groups_users')->insert($data);
-// ------------------------------------- EDITOR 4 -----------------------------------------------------
 
-// --------------------------------------- LAYOUTER 5 ---------------------------------------------------
-                  $data = [
-                            'email'         => 'enggar@sego.tech',
-                            'username'      => 'Enggar',
-                            'fullname'      => 'Enggar Putri Atmaja Ningrum',
-                            'nickname'      => 'Enggar Putri',
-                            'pob'           => 'Palu',
-                            'dob'           => '1997-5-5',
-                            'gender'        => 'Female',
-                            'mobile'        => '+6287712630007',
-                            'password_hash' => '$2y$10$6AnvAoVKo46945pqgZhrc.Z3z2e/Bpn2mMHurPm3M5iiVzJApp5Qu',
-                            'active'        => '1',
-                            'image'         => 'enggar.jpg',
-                            'created_at'    => date("Y-m-d h:i:sa"),
-                      ];
-                  $this->db->table('users')->insert($data);
 
+// --------------------------- Web Configuration------------------------------------------------------------
                   $data = [
-                          'user_id'      => '6',
-                          'group_id'     => '5',
+                          'name'        => 'Mi Casa Publisher',
+                          'description' => 'Publisher',
+                          'visi'        => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                          'misi'        => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                          'instagram'   => 'misa',
+                          'facebook'    => 'micasa',
+                          'twitter'     => 'micasa',
+                          'whatsapp'    => '+966570027737',
+                          'email'       => 'admin@micasa.id',
+                          'address'     => 'Bogor',
+                          'logo'        => 'micasa.png',
+                          'icon'        => 'micasa.ico',
                       ];
-                  $this->db->table('auth_groups_users')->insert($data);
-// ------------------------------------- LAYOUTER 5 -----------------------------------------------------
-//
-//
-//
+                  $this->db->table('web_config')->insert($data);
+// ---------------------------- Web Configuration-----------------------------------------------------------
+
+
+
+
 //                   $data = [
 //                     [
 //                       'name'     			=> 'Penanggung Jawab Event',
