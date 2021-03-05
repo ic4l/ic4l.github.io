@@ -1,9 +1,8 @@
-# CodeIgniter 4 Application Starter
+# Mi Casa Publisher
 
 ## What is CodeIgniter?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Web App untuk para penulis berkarya.
 
 This repository holds a composer-installable app starter.
 It has been built from the
