@@ -32,6 +32,10 @@ $routes->setAutoRoute(true);
 
 // --------------------------------------------------------------------
 $routes->get('/', 'Main::index', ['filter' => 'noauth']);
+$routes->get('books', 'Main::books', ['filter' => 'noauth']);
+$routes->get('events', 'Main::events', ['filter' => 'noauth']);
+$routes->get('about_us', 'Main::about_us', ['filter' => 'noauth']);
+$routes->get('contact_us', 'Main::contact_us', ['filter' => 'noauth']);
 // --------------------------------------------------------------------
 
 // --------------------------------------------------------------------

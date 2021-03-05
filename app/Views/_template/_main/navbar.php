@@ -18,22 +18,16 @@
                             <a class="nav-link" href="<?= base_url(''); ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="price.html">Books</a>
+                            <a class="nav-link" href="<?= base_url('books'); ?>">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">Events</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Pages</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="blog-page.html">Blog Page</a>
-                                <a class="dropdown-item" href="blog-detail.html">Blog Detail</a>
-                            </div>
+                            <a class="nav-link" href="<?= base_url('events'); ?>">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
+                            <a class="nav-link" href="<?= base_url('about_us'); ?>">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('contact_us'); ?>">Contact Us</a>
                         </li>
                     </ul>
                     <div class="my-3 my-lg-0">

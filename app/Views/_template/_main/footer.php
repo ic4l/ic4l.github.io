@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-xl-3 mb-30">
                     <div class="mb-30">
-                        <img class="logo-footer" src="<?= base_url('_assets'); ?>/img/logo-light.png" alt="Bootbox">
+                        <img class="logo-footer" src="<?= base_url('_assets/_images/_logo'); ?>/micasa-logo2.png" alt="Mi Casa">
                     </div>
                     <p class="mb-30 c-white">Lorem ipsum dolor sit amet, cons ectadetudzdae rcquisc adipiscing elit.
                         Aenean socada commodo dolor.</p>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="copyright text-center c-white">
-            ©2020 - Bootbox. <span class="d-none d-md-inline-block">All rights reserved.</span>
+            ©2022 - Mi Casa. <span class="d-none d-md-inline-block">All rights reserved.</span>
         </div>
     </div>
 </footer>
