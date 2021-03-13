@@ -27,7 +27,7 @@
                             <a href="#" class="zmdi zmdi-instagram"></a>
                         </span>
                         <span class="img-holder d-inline-block">
-                            <img src="<?= base_url('_assets/_main'); ?>/img/team/team_1.jpg" alt="Team">
+                            <img src="<?= base_url('_assets/_images/_users'); ?>/ic4l.jpg" alt="Team">
                         </span>
                     </div>
                     <div class="team-content">
@@ -46,7 +46,7 @@
                             <a href="#" class="zmdi zmdi-instagram"></a>
                         </span>
                         <span class="img-holder d-inline-block">
-                            <img src="<?= base_url('_assets/_main'); ?>/img/team/team_2.jpg" alt="Team">
+                            <img src="<?= base_url('_assets/_images/_users'); ?>/odha.jpg" alt="Team">
                         </span>
                     </div>
                     <div class="team-content">
@@ -65,7 +65,7 @@
                             <a href="#" class="zmdi zmdi-instagram"></a>
                         </span>
                         <span class="img-holder d-inline-block">
-                            <img src="<?= base_url('_assets/_main'); ?>/img/team/team_3.jpg" alt="Team">
+                            <img src="<?= base_url('_assets/_images/_users'); ?>/faradisa.jpg" alt="Team">
                         </span>
                     </div>
                     <div class="team-content">
@@ -84,7 +84,7 @@
                             <a href="#" class="zmdi zmdi-instagram"></a>
                         </span>
                         <span class="img-holder d-inline-block">
-                            <img src="<?= base_url('_assets/_main'); ?>/img/team/team_3.jpg" alt="Team">
+                            <img src="<?= base_url('_assets/_images/_users'); ?>/rafa.jpg" alt="Team">
                         </span>
                     </div>
                     <div class="team-content">

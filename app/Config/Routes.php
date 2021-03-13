@@ -40,6 +40,7 @@ $routes->get('contact_us', 'Main::contact_us', ['filter' => 'noauth']);
 
 // --------------------------------------------------------------------
 $routes->get('dashboard', 'Admin::index', ['filter' => 'login']);
+$routes->get('web_config', 'Webconfig::index', ['filter' => 'login']);
 // --------------------------------------------------------------------
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //

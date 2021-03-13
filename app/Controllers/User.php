@@ -21,9 +21,10 @@ class User extends BaseController
 
 	public function user_list()
 	{
-
-		$data['users'] = $this->CrudModel->get_all('users_view');
-		$data['user'] = $this->CrudModel->get_where('users_view', 'userid', user()->id);
+		$data = [
+			'users' => $this->CrudModel->get_all('users_view'),
+			'user' => $this->CrudModel->get_where('users_view', 'userid', user()->id)
+		];
 
 		return view('_page/_admin/user_list', $data);
 	}

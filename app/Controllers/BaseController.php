@@ -7,6 +7,9 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use App\Models\ConfigModel;
+use App\Models\UserModel;
+
 /**
  * Class BaseController
  *
@@ -45,5 +48,7 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.: $this->session = \Config\Services::session();
+		$this->webConfig = new ConfigModel;
+		$this->userModel = new UserModel;
 	}
 }

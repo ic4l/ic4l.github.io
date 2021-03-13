@@ -11,4 +11,14 @@ class UserModel extends MythModel
         'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at',
         'mobile', 'fullname', 'gender', 'pob', 'dob', 'facebook', 'instagram', 'twitter', 'image', 'address'
     ];
+
+    public function getUsers($id = false)
+    {
+      if ($id == false) {
+        return $this->findAll();
+      }
+
+      return $this->where(['id' => $id])->first();
+    }
+    
 }

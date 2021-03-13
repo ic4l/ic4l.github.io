@@ -1,13 +1,6 @@
 <?= $this->extend('_template/_admin/template') ?>
 
 <?= $this->section('content') ?>
-<main id="js-page-content" role="main" class="page-content">
-  <ol class="breadcrumb page-breadcrumb">
-      <li class="breadcrumb-item"><a href="javascript:void(0);">Segotech</a></li>
-      <li class="breadcrumb-item">User</li>
-      <li class="breadcrumb-item active">Edit</li>
-      <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
-  </ol>
   <div class="subheader">
       <h1 class="subheader-title">
           <i class='subheader-icon fal fa-edit'></i> Edit User Profile
@@ -139,5 +132,4 @@
       </div>
     </div>
   </div>
-</main>
 <?= $this->endSection() ?>

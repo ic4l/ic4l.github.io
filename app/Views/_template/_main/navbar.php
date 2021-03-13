@@ -1,3 +1,5 @@
+<?php $uri = service('uri'); ?>
+
 <!-- START Header -->
 <header class="header position-relative">
     <!-- START Navigation -->
@@ -14,19 +16,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="theme-navbar">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item <?= ($uri->getSegment(1) == '' ? 'active' : null)  ?>">
                             <a class="nav-link" href="<?= base_url(''); ?>">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'books' ? 'active' : null)  ?>">
                             <a class="nav-link" href="<?= base_url('books'); ?>">Books</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'events' ? 'active' : null)  ?>">
                             <a class="nav-link" href="<?= base_url('events'); ?>">Events</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'about_us' ? 'active' : null)  ?>">
                             <a class="nav-link" href="<?= base_url('about_us'); ?>">About Us</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'contact_us' ? 'active' : null)  ?>">
                             <a class="nav-link" href="<?= base_url('contact_us'); ?>">Contact Us</a>
                         </li>
                     </ul>

@@ -44,17 +44,29 @@
               </a>
           </li>
           <li class="<?= ($uri->getSegment(1) == 'user' ? 'active open' : null)  ?>">
-              <a href="#" title="Theme Settings" data-filter-tags="theme settings">
+              <a href="#" data-filter-tags="theme settings">
                   <i class="fas fa-user-cog"></i>
                   <span class="nav-link-text" data-i18n="nav.theme_settings">User</span>
               </a>
               <ul>
-                  <li class="<?= ($uri->getSegment(2) == 'user_list' ? 'active' : null)  ?>">
+                  <li class="<?= ($uri->getSegment(1) == 'user' ? 'active' : null)  ?>">
                     <a href="<?= base_url('user/user_list'); ?>" title="User List" data-filter-tags="user">
                       <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">User List</span>
                     </a>
                   </li>
               </ul>
+          </li>
+          <li class="<?= ($uri->getSegment(1) == 'web_config' ? 'active' : null)  ?>">
+              <a href="<?= base_url('web_config'); ?>" data-filter-tags="blank page">
+                  <i class="fas fa-tools"></i>
+                  <span class="nav-link-text" data-i18n="nav.blankpage">Web Configuration</span>
+              </a>
+          </li>
+          <li>
+              <a href="<?= base_url('logout'); ?>"data-filter-tags="blank page">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span class="nav-link-text" data-i18n="nav.blankpage">Logout</span>
+              </a>
           </li>
         </ul>
         <!-- END NAVBAR -->
