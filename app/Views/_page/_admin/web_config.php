@@ -84,7 +84,7 @@
                       Web Logo
                   </div>
                   <div class="card-body col">
-                    <img src="<?= base_url('_assets/_admin/img/favicon/'.$wconfig['logo']); ?>" class="shadow-2 img-thumbnail" alt="">
+                    <img src="<?= base_url('_assets/_admin/img/favicon/'.$wconfig['logo']); ?>" class="shadow-2 img-thumbnail bg-dark rounded mx-auto d-block" alt="">
                     <div class="form-group mb-0 mt-3">
                         <label class="form-label">Change Image</label>
                         <div class="custom-file">
@@ -104,7 +104,7 @@
                       Web Icon
                   </div>
                   <div class="card-body col">
-                    <img src="<?= base_url('_assets/_admin/img/favicon/'.$wconfig['icon']); ?>" class="shadow-2 img-thumbnail" alt="">
+                    <img src="<?= base_url('_assets/_admin/img/favicon/'.$wconfig['icon']); ?>" class="shadow-2 img-thumbnail bg-dark rounded mx-auto d-block" alt="">
                     <div class="form-group mb-0 mt-3">
                         <label class="form-label">Change Image</label>
                         <div class="custom-file">
